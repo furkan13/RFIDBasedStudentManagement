@@ -1,5 +1,7 @@
 
 
+
+
 import java.sql.*;
 
 
@@ -10,12 +12,12 @@ public class AddStudent {
     int  id;
     double cgpa;
     int bus_route;
-    long depCode;
+    double depCode;
     int semester;
 
 
-    public AddStudent(String uid, String name, int id, double cgpa, int bus_route, long depCode, int semester) {
-        this.uid = uid;
+    public AddStudent( String uid,String name, int id, double cgpa, int bus_route, double depCode, int semester) {
+       this.uid = uid;
         this.name = name;
         this.id = id;
         this.cgpa = cgpa;
@@ -56,7 +58,7 @@ public class AddStudent {
             ((PreparedStatement) add).setInt(4,id);
             ((PreparedStatement) add).setFloat(5, (float) cgpa);
             ((PreparedStatement) add).setInt(6,bus_route);
-            ((PreparedStatement) add).setLong(7,depCode);
+            ((PreparedStatement) add).setDouble(7,depCode);
             ((PreparedStatement) add).setInt(8,semester);
             int st=((PreparedStatement) add).executeUpdate();
 
@@ -78,8 +80,9 @@ public class AddStudent {
             e.printStackTrace();
         }
         System.out.println(uid);
-        AddStudent stu=new AddStudent(uid,"furkan alahi",11161212,4.00,1,11,161);
-        stu.studentConnector();
+        //AddStudent stu=new AddStudent("furkan alahi",11161212,4.00,1,11,161);
+        
+        //stu.studentConnector();
     }
 
 
