@@ -1,3 +1,5 @@
+
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,6 +11,7 @@ import java.util.Scanner;
 
 public class Server {
     static  String str;
+    static  boolean confirm;
 
     public static  void runServer()  throws Exception {
 
@@ -30,6 +33,7 @@ public class Server {
                     {
                         System.out.println(str);
                         GetData.setuid(str);
+                        setConfirm(true);
                         break;
 
                     }
@@ -57,8 +61,17 @@ public class Server {
 
     }
 
+public static void setConfirm(boolean con)
+{
+   confirm=con;
+   
+}
 
 
+public static boolean getConfirm()
+{
+    return confirm;
+}
 
 
 
